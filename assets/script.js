@@ -78,8 +78,7 @@
   }
 
   async function getTimeCards() {
-    const dateOptions = { year: "numeric", month: "2-digit", day: "2-digit" };
-    let today = new Date().toLocaleDateString("en-US", dateOptions);
+    let today = new Date()..toISOString().substring(0,10);
 
     var resp = await fetch(
       `https://api.pontomais.com.br/api/time_card_control/current/work_days/${today}`,
